@@ -3,14 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^17.0.38
   rimraf: ^3.0.2
-  sync-npm-mirror: ^0.2.3
+  sync-npm-mirror: ^0.3.2
   ts-node: ^10.8.0
   typescript: ^4.7.2
 
 devDependencies:
   '@types/node': 17.0.39
   rimraf: 3.0.2
-  sync-npm-mirror: 0.2.9
+  sync-npm-mirror: 0.3.2
   ts-node: 10.8.1_7mvreszf4wwmovnfi4srbo6mna
   typescript: 4.7.3
 
@@ -385,8 +385,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /sync-npm-mirror/0.2.9:
-    resolution: {integrity: sha512-fOvX38BD1fWVqYU9cAaP3/WXSLCboQ5t8intuGc3kFLsSfmqo5HXBcmzPklxxi4RLnqwy2YMtcxHAinj5bRuZA==}
+  /sync-npm-mirror/0.3.2:
+    resolution: {integrity: sha512-owzR+xIafemzhuKzCMGc1QH2dok9wmZL3N+He1eToLPwVDJcwLc+GWTkflCBn2jCrrBruNHHWAY9j0UXgNBJQA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
