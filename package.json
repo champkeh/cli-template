@@ -8,7 +8,7 @@
     "dev": "ts-node src/cli.ts",
     "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build",
-    "postpublish": "sync-npm-mirror sync-npm-mirror"
+    "postpublish": "sync-npm-mirror npm-template"
   },
   "repository": {
     "type": "git",
