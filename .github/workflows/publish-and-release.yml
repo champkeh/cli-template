@@ -1,0 +1,56 @@
+name: Publish and Release
+
+on: push
+
+jobs:
+  publish:
+    if: github.repository == 'champkeh/npm-template'
+    runs-on: ubuntu-latest
+    environment: Release
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
+      - name: Set node version to v16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org/
+          cache: "pnpm"
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Publish package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  release:
+    if: github.repository == 'champkeh/sync-npm-mirror'
+    runs-on: ubuntu-latest
+    needs: [publish]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get version
+        uses: tyankatsu0105/read-package-version-actions@v1
+        id: version
+
+      - name: Create Release for Tag
+        id: release_tag
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          release_name: v${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: false
+          body: |
