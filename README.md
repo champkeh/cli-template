@@ -10,7 +10,9 @@
 
 - typescript
 - 各种 Lint 工具（`eslint/commitlint/prettier/husky/lint-staged`）
-- 自动创建 Release 与发布 npm（需配置对应 token）
+- 自动发布 npm 并创建 Release（需配置对应 token）
+- 命令行参数解析采用 [cac](https://github.com/cacjs/cac#readme)
+- spinner 采用 [ora](https://github.com/sindresorhus/ora#readme)
 
 > 发布 npm 需要配置`NPM_TOKEN`<br/>
 > 创建 Release 需要配置`GITHUB_TOKEN`
