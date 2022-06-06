@@ -1,5 +1,5 @@
 {
-  "name": "npm-template",
+  "name": "cli-template",
   "version": "0.0.1",
   "license": "MIT",
   "author": "champkeh",
@@ -10,12 +10,12 @@
     "lint": "eslint --fix .",
     "build": "rimraf dist && tsc",
     "prepublishOnly": "run-s format lint build",
-    "postpublish": "sync-npm-mirror npm-template",
+    "postpublish": "sync-npm-mirror cli-template",
     "prepare": "husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/champkeh/npm-template.git"
+    "url": "git+https://github.com/champkeh/cli-template.git"
   },
   "keywords": [],
   "main": "dist/index.js",
@@ -29,9 +29,9 @@
     "node": ">=10"
   },
   "bugs": {
-    "url": "https://github.com/champkeh/npm-template/issues"
+    "url": "https://github.com/champkeh/cli-template/issues"
   },
-  "homepage": "https://github.com/champkeh/npm-template#readme",
+  "homepage": "https://github.com/champkeh/cli-template#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
